@@ -28,7 +28,6 @@ p {
     font-style: normal;
 }
 
-<<<<<<< HEAD
 body {
 
     background-color: grey;
@@ -318,7 +317,7 @@ footer {
 
 
 /***** MEDIA QUERY DESKTOP SLUT *****/
-=======
+
 /***** INDEX / NAVBAR *****/
 .index {
     overflow: hidden;
@@ -484,4 +483,3 @@ header {
     opacity: 1;
     pointer-events: auto;
 }
->>>>>>> Navbar
