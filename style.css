@@ -13,10 +13,19 @@ img {
 }
 
 /***** HØJSKOLEOPHOLD *****/
-body {
-    background-image: url(hoejskole-skabelon.png);
-    object-fit: cover;
-    background-repeat: no-repeat;
-    margin-left: auto;
-    margin-right: auto;
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: grey;
+
+    -webkit-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    -moz-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    margin: 0 auto;
 }
