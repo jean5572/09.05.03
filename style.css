@@ -11,3 +11,12 @@ html {
 img {
     width: 100%;
 }
+
+/***** HØJSKOLEOPHOLD *****/
+body {
+    background-image: url(hoejskole-skabelon.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
