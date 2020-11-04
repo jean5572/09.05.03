@@ -12,6 +12,7 @@ img {
     width: 100%;
 }
 
+<<<<<<< HEAD
 
 /***** FONTS *****/
 /*
@@ -26,3 +27,141 @@ p {
     font-weight: 400;
     font-style: normal;
 }
+=======
+body {
+
+    background-color: grey;
+}
+
+/***** VIVI START *****/
+/***** HØJSKOLEOPHOLD *****/
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: darkgrey;
+
+    -webkit-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    -moz-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    background-color: lightgrey;
+    margin: 0 auto;
+}
+
+.div1 {
+    width: 100vw;
+    height: auto;
+    background-color: grey;
+    padding: 30px;
+}
+
+.div1 img {
+    background-color: lightgrey;
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.div1 p {
+    margin-bottom: 20px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: #F8F8F8;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    color: #F8F8F8;
+
+}
+
+.div2 {
+    width: 100vw;
+    height: auto;
+    background-color: grey;
+    padding: 30px;
+}
+
+.div2 img {
+    background-color: lightgrey;
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.div2 video {
+    background-color: lightgrey;
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
+
+.button {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: #F29F05;
+    color: #F8F8F8;
+
+    width: 140px;
+    height: 45px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    margin: 30px;
+}
+
+button:hover {
+    background-color: #F29F05;
+    box-shadow: 0px 8px 15px rgba(60, 60, 60, 0.3);
+    color: #F8F8F8;
+    transform: translateY(-5px);
+}
+
+
+footer {
+    width: 100vw;
+    height: 300px;
+    background-color: grey;
+}
+
+.footer-column {
+    border-bottom: 1px solid #F8F8F8;
+    padding: 30px;
+}
+
+/***** VIVI SLUT *****/
+>>>>>>> Vivi
