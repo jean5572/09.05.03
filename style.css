@@ -163,3 +163,14 @@ footer {
 }
 
 /***** VIVI SLUT *****/
+
+
+/***** MEDIA QUERY DESKTOP START *****/
+
+@media (min-width: 600px) {
+    footer {
+        display: flex;
+    }
+}
+
+/***** MEDIA QUERY DESKTOP SLUT *****/
