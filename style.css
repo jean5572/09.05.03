@@ -1,0 +1,13 @@
+/***** GENERELT / RESET *****/
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    width: 100%;
+}
