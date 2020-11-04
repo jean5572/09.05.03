@@ -29,3 +29,41 @@ header {
     background-color: lightgrey;
     margin: 0 auto;
 }
+
+
+.button {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    background-color: #F29F05;
+    color: #F8F8F8;
+
+    width: 140px;
+    height: 45px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #F29F05;
+    box-shadow: 0px 8px 15px rgba(60, 60, 60, 0.3);
+    color: #F8F8F8;
+    transform: translateY(-5px);
+
+
+
+    footer {
+        width: 100vw;
+        height: 300px;
+        background-color: grey;
+    }
