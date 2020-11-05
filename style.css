@@ -51,14 +51,14 @@ header {
     margin: 0 auto;
 }
 
-.div1 {
+.section-content {
     width: 100vw;
     height: auto;
     background-color: grey;
     padding: 30px;
 }
 
-.div1 img {
+.section-content img {
     background-color: lightgrey;
     width: 300px;
     height: 300px;
@@ -68,7 +68,7 @@ header {
     margin-bottom: 50px;
 }
 
-.div1 p {
+.section-content p {
     margin-bottom: 20px;
 }
 
@@ -89,24 +89,7 @@ p {
 
 }
 
-.div2 {
-    width: 100vw;
-    height: auto;
-    background-color: grey;
-    padding: 30px;
-}
-
-.div2 img {
-    background-color: lightgrey;
-    width: 300px;
-    height: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-}
-
-.div2 video {
+.section-content video {
     background-color: lightgrey;
     width: 300px;
     height: 300px;
@@ -170,7 +153,6 @@ td {
 
 /***** SIMONE START *****/
 footer {
-    position: fixed;
     bottom: 0;
 }
 
