@@ -340,12 +340,15 @@
 
     </header>
 
+    <template class="temp">
+        <h3 class="navn-kursus"></h3>
+        <p class="beskrivelse"></p>
+    </template>
+
     <main>
         <!-- INTRO -->
         <section id="ugekurser" class="section-content">
         </section>
-
-
 
         <!-- UNDERMENU -->
         <nav class="undermenu">
@@ -410,18 +413,20 @@
 
     <script src="script.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            console.log('DOM loaded');
-        });
-
+        "use strict"
         const ugeKurser = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/pages/745";
+        const ugeKurserPods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/ugekursuspods?per_page=100";
 
+        let ugekurser;
+        let ugeKurserPodsGlob;
         document.addEventListener("DOMContentLoaded", hentData);
 
 
         async function hentData() {
             const respons = await fetch(ugeKurser);
+            const respons1 = await fetch(ugeKurserPods);
             ugekurser = await respons.json();
+            ugeKurserPodsGlob = await respons1.json();
             vis(ugekurser);
             console.log('DataHentet')
         }
@@ -429,8 +434,24 @@
         function vis(ugekurser) {
             console.log(ugekurser)
             document.querySelector("#ugekurser").innerHTML = ugekurser.content.rendered;
-            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+            hentUgeKurserPods(ugeKurserPodsGlob);
+        }
 
+        function hentUgeKurserPods(ugeKurserPod) {
+            let temp = document.querySelector(".temp");
+            let container = document.querySelector(".ugekurser-pods");
+
+            ugeKurserPod.forEach(ugekursus => {
+
+                const klon = temp.cloneNode(true).content;
+                klon.querySelector(".navn-kursus").textContent = ugekursus.title.rendered;
+                klon.querySelector(".beskrivelse").innerHTML = ugekursus.beskrivelse;
+
+                container.appendChild(klon);
+
+
+
+            })
         }
 
     </script>
