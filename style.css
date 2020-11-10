@@ -281,12 +281,18 @@ header {
 }
 
 /***** FORSIDE ******/
-.wp-block-group_inner-container {
+
+
+.wp-block-group__inner-container .wp-block-group__inner-container {
     display: flex;
     justify-content: space-around;
-    padding: 50px;
-    font-size: 2rem;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    font-size: 1.8rem;
 }
+
+
+
 
 /***** VIVI START *****/
 /***** HØJSKOLEOPHOLD *****/
