@@ -25,7 +25,7 @@ h2,
 p,
 ul {
     font-family: proxima-nova, sans-serif;
-    font-weight: 400;
+    /*font-weight: 400;*/
     font-style: normal;
     color: #F8F8F8;
 }
@@ -282,18 +282,97 @@ header {
 
 /***** FORSIDE ******/
 
-
+/**værdier**/
 .wp-block-group__inner-container .wp-block-group__inner-container {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 50px;
     font-size: 1.8rem;
 }
 
+/**kort om ihs**/
+.wp-block-group__inner-container h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
 
+.kort_om_os_text {
+    padding-bottom: 20px;
+}
 
+.wp-block-button {
+    font-size: 1.3rem;
+    background-color: rgb(255, 167, 0);
+    color: white;
+    padding: 15px 32px;
+    display: inline-block;
+}
 
+.wp-block-buttons {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    transition: transform .3s;
+}
+
+.wp-block-button__link {
+    color: #F8F8F8;
+}
+
+.wp-block-button:hover {
+    transform: scale(1.2);
+}
+
+/**udtagelser**/
+.person-1 {
+    display: flex;
+    padding-bottom: 50px;
+
+}
+
+.person-1 img {
+    width: 76%;
+    height: auto;
+    border-radius: 50%
+}
+
+.person-1 p {
+    font-size: 2rem;
+}
+
+.person-2 {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.person-2 img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%
+}
+
+.person-2 p {
+    font-size: 2rem;
+}
+
+.person-3 {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.person-3 img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%
+}
+
+.person-3 p {
+    font-size: 2rem;
+}
 
 /***** VIVI START *****/
 /***** HØJSKOLEOPHOLD *****/
