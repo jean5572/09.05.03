@@ -341,7 +341,7 @@
     </header>
 
     <template class="temp">
-        <h3>Hej</h3>
+        <h3></h3>
         <div class="beskrivelse1"></div>
     </template>
 
@@ -417,12 +417,10 @@
         function vis(hoejskole) {
             console.log(hoejskole)
             document.querySelector("#hoejskoleophold").innerHTML = hoejskole.content.rendered;
-            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
             hentFagPods(fagpodGlob);
         }
 
         function hentFagPods(fagpod) {
-            //            container.innerHTML = "";
             let temp = document.querySelector(".temp");
             let container = document.querySelector(".fag-pods");
             fagpod.forEach(fag => {

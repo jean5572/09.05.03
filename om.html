@@ -9,7 +9,7 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <div class="container">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
@@ -339,6 +339,18 @@
         </div>
 
     </header>
+
+    <template class="temp">
+        <img class="profil_billede" src="" alt="">
+        <h3 class="navn"></h3>
+        <p class="stilling"></p>
+        <p class="beskrivelse"></p>
+    </template>
+
+    <template class="temp2">
+        <p class="question"></p>
+        <p class="answer"></p>
+    </template>
     <main>
         <!-- INTRO -->
         <section id="om" class="section-content">
@@ -393,18 +405,24 @@
 
     <script src="script.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
-            console.log('DOM loaded');
-        });
-
+        "use strict"
         const omIhs = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/pages/58";
+        const personalePods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/personale?per_page=100";
+        const faqPods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/faq?per_page=100";
 
+        let om;
+        let personalePodsGlob;
+        let faqPodsGlob;
         document.addEventListener("DOMContentLoaded", hentData);
 
 
         async function hentData() {
             const respons = await fetch(omIhs);
+            const respons1 = await fetch(personalePods);
+            const respons2 = await fetch(faqPods);
             om = await respons.json();
+            personalePodsGlob = await respons1.json();
+            faqPodsGlob = await respons2.json();
             vis(om);
             console.log('DataHentet')
         }
@@ -412,8 +430,44 @@
         function vis(om) {
             console.log(om)
             document.querySelector("#om").innerHTML = om.content.rendered;
-            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+            hentPersonalePods(personalePodsGlob);
+            hentFaqPods(faqPodsGlob);
+        }
 
+        function hentPersonalePods(personPod) {
+            let temp = document.querySelector(".temp");
+            let container = document.querySelector(".personale-pods");
+
+            personPod.forEach(person => {
+
+                const klon = temp.cloneNode(true).content;
+                klon.querySelector(".profil_billede").src = person.profil_billede.guid;
+                klon.querySelector(".navn").textContent = person.title.rendered;
+                klon.querySelector(".stilling").textContent = person.stilling;
+                klon.querySelector(".beskrivelse").innerHTML = person._beskrivelse;
+
+                container.appendChild(klon);
+
+
+
+            })
+        }
+
+        function hentFaqPods(faqPod) {
+            let temp = document.querySelector(".temp2");
+            let container2 = document.querySelector(".faq-pods");
+
+            faqPod.forEach(faq => {
+
+                const klon = temp.cloneNode(true).content;
+                klon.querySelector(".question").textContent = faq.question;
+                klon.querySelector(".answer").textContent = faq.answer;
+
+                container2.appendChild(klon);
+
+
+
+            })
         }
 
     </script>
