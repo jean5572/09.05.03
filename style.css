@@ -42,7 +42,7 @@ body {
 /***** JEAN NAVBAR START *****/
 /***** INDEX / NAVBAR *****/
 .index {
-    overflow: hidden;
+/*    overflow: hidden;*/
     font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -70,8 +70,8 @@ header {
     position: relative;
     height: calc(100vh - 3rem);
     width: 100%;
-    background: url(img/landingpage/splash1.jpg) no-repeat top center / cover;
-    overflow: hidden;
+/*    background: url(img/landingpage/splash1.jpg) no-repeat top center / cover;*/
+/*    overflow: hidden;*/
 }
 
 .overlay {
