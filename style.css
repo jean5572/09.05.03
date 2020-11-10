@@ -66,12 +66,13 @@ header {
     /*    height: 3rem;*/
 }
 
+/*
 .splash {
     position: relative;
     height: calc(100vh - 3rem);
     width: 100%;
-/*    background: url(img/landingpage/splash1.jpg) no-repeat top center / cover;*/
-/*    overflow: hidden;*/
+    background: url(img/landingpage/splash1.jpg) no-repeat top center / cover;
+    overflow: hidden;
 }
 
 .overlay {
@@ -81,7 +82,7 @@ header {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 
 .container {
     max-width: 65rem;
