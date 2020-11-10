@@ -629,6 +629,7 @@ p {
         @include transform-style();
         height: 100%;
         width: 100%;
+        border: 1px solid #ccc;
 
         .front,
         .back {
@@ -660,9 +661,7 @@ p {
     }
 
     .contact-form {
-        padding: 0 10%;
-        margin-top: 50px;
-        width: 80%;
+
 
         input,
         textarea {
@@ -681,6 +680,7 @@ p {
 
         .gutter {
             margin-right: 2.8%;
+            color: aliceblue;
         }
 
         textarea {
@@ -730,12 +730,45 @@ p {
     width: 100%;
 }
 
+/***KontaktformularSim***/
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    transition: transform .3s;
+
+}
+
+input[type=submit] {
+    background-color: rgb(255, 167, 0);
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.3rem;
+}
+
+input[type=submit]:hover {
+    transform: scale(1.2);
+}
 
 
 /***** SIMONE START *****/
 footer {
     bottom: 0;
 }
+
+/*********/
 
 .footer-all {
     background-color: #A8BF78;
