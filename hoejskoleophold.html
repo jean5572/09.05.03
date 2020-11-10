@@ -14,15 +14,18 @@
     </header>
 
     <main>
-       <!-- INTRO -->
+        <!-- INTRO -->
         <section id="hoejskoleophold" class="section-content">
+            <!--
             <h1>Overskrift</h1>
             <h2>Underoverskrift</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, ipsam doloremque ipsa dolorum aliquid harum porro, nobis, ex expedita tempora voluptate consequuntur hic eius voluptates odio quaerat, nostrum at aperiam?</p>
             <img>
+-->
         </section>
 
         <section class="section-content">
+            <!--
             <h1>Overskrift</h1>
             <img>
             <video></video>
@@ -30,6 +33,7 @@
             <div class="button">
                 <button>CTA</button>
             </div>
+-->
         </section>
     </main>
 
@@ -75,6 +79,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            console.log('DOM loaded');
+        });
+
+        const hoejskoleophold = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/pages/616";
+
+        document.addEventListener("DOMContentLoaded", hentData);
+
+
+        async function hentData() {
+            const respons = await fetch(hoejskoleophold);
+            hoejskole = await respons.json();
+            vis(hoejskole);
+            console.log('DataHentet')
+        }
+
+        function vis(hoejskole) {
+            console.log(hoejskole)
+            document.querySelector("#hoejskoleophold").innerHTML = hoejskole.content.rendered;
+            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+
+        }
+
+    </script>
 </body>
 
 </html>
