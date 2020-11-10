@@ -9,7 +9,7 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <div class="container">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
@@ -412,13 +412,16 @@
         });
 
         const hoejskoleophold = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/pages/616";
+        const fagpods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/fag";
 
         document.addEventListener("DOMContentLoaded", hentData);
 
 
         async function hentData() {
             const respons = await fetch(hoejskoleophold);
+            const respons1 = await fetch(fagpods);
             hoejskole = await respons.json();
+            fagpod = await respons1.json();
             vis(hoejskole);
             console.log('DataHentet')
         }
@@ -427,7 +430,22 @@
             console.log(hoejskole)
             document.querySelector("#hoejskoleophold").innerHTML = hoejskole.content.rendered;
             //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+            hentFagPods(fagpod);
+        }
 
+        function hentFagPods(fagpod) {
+            //            container.innerHTML = "";
+            fagpod.forEach(fag => {
+                if {
+                    const klon = temp.cloneNode(true).content;
+                    klon.querySelector(".title").textContent = fag.title.rendered;
+                    klon.querySelector(".beskrivelse1").innerHTML = fag.beskrivelse1;
+
+                    container.appendChild(klon);
+
+                }
+
+            })
         }
 
     </script>
