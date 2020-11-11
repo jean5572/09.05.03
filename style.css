@@ -21,13 +21,52 @@ font-family: proxima-nova,sans-serif;
 font-weight: 400;
 font-style: normal;*/
 
-h1,
-h2,
+
 ul {
     font-family: proxima-nova, sans-serif;
     /*font-weight: 400;*/
     font-style: normal;
     color: #F8F8F8;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: proxima-nova, sans-serif;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    font-style: bold;
+}
+
+h2 {
+    font-size: 2.3rem;
+    font-family: proxima-nova, sans-serif;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    font-style: bold;
+}
+
+h3 {
+    font-size: 2.1rem;
+    font-family: proxima-nova, sans-serif;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    font-style: bold;
+}
+
+h4 {
+    font-size: 1.9rem;
+    font-family: proxima-nova, sans-serif;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    font-style: bold;
+}
+
+h5 {
+    font-size: 1.7rem;
+    font-family: proxima-nova, sans-serif;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    font-style: bold;
 }
 
 p {
@@ -36,6 +75,28 @@ p {
     font-style: normal;
     color: #F8F8F8;
 }
+
+/***FOOTER LINKS***/
+/*footer {
+        -webkit-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    -moz-box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+    box-shadow: 10px 10px 10px -5px rgba(60, 60, 60, 0.3);
+}*/
+
+footer a:link {
+    color: #f29f05;
+}
+
+footer a:hover {
+    color: #f8f8f8;
+
+}
+
+.footer-icons2 img {
+    width: 50%;
+    margin: 20px;
+}
+
 
 ul {
     padding-bottom: 20px;
@@ -873,14 +934,14 @@ footer {
     line-height: 38px;
 }
 
-.footer-all .footer-center p {
+/*.footer-all .footer-center p {
     display: inline-block;
     color: black;
     vertical-align: middle;
     margin: 0;
-}
+}*/
 
-.footer-all .footer-center p {
+/*.footer-all .footer-center p {
     display: block;
     font-weight: normal;
     font-size: 14px;
@@ -891,7 +952,7 @@ footer {
     color: #000000;
     text-decoration: none;
     ;
-}
+}*/
 
 
 
