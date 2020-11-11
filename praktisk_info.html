@@ -9,7 +9,7 @@
 </head>
 
 <body>
-        <header>
+    <header>
         <div class="container">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
@@ -342,6 +342,7 @@
 
     <main>
         <!-- INTRO -->
+        <h1 class="title-page"></h1>
         <section id="praktisk-info" class="section-content">
         </section>
 
@@ -437,7 +438,7 @@
         function vis(praktisk) {
             console.log(praktisk)
             document.querySelector("#praktisk-info").innerHTML = praktisk.content.rendered;
-            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+            document.querySelector(".title-page").innerHTML = praktisk.title.rendered;
 
         }
 

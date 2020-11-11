@@ -353,6 +353,7 @@
     </template>
     <main>
         <!-- INTRO -->
+        <h1 class="title-page"></h1>
         <section id="om" class="section-content">
         </section>
     </main>
@@ -430,6 +431,7 @@
         function vis(om) {
             console.log(om)
             document.querySelector("#om").innerHTML = om.content.rendered;
+            document.querySelector(".title-page").innerHTML = om.title.rendered;
             hentPersonalePods(personalePodsGlob);
             hentFaqPods(faqPodsGlob);
         }
