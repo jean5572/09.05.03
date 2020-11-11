@@ -745,15 +745,17 @@ p {
 input[type=text],
 select,
 textarea {
-    width: 100%;
+    width: 70%;
     padding: 12px;
     border: 1px solid white;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 1px;
     resize: vertical;
     transition: transform .3s;
+    display: inline-block;
+
 
 }
 
@@ -766,6 +768,7 @@ input[type=submit] {
     cursor: pointer;
     display: inline-block;
     font-size: 1.3rem;
+    display: inline-block;
 }
 
 input[type=submit]:hover {
@@ -782,7 +785,6 @@ footer {
 
 .footer-all {
     background-color: #A8BF78;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     padding: 55px 50px;
@@ -800,15 +802,6 @@ footer {
     width: 40%;
 }
 
-.footer-all h3 {
-    color: #000000;
-    margin: 0;
-}
-
-.footer-all h3 span {
-    color: #000000;
-}
-
 
 .footer-all .footer-links {
     color: #000000;
@@ -818,15 +811,18 @@ footer {
 
 .footer-all .footer-links a {
     display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color: inherit;
 }
 
-
+.footer-all .footer-right {
+    width: 30%;
+}
 
 .footer-all .footer-center {
-    width: 35%;
+    width: 30%;
+}
+
+.footer-all .footer-right {
+    width: 20%;
 }
 
 .footer-all .footer-center i {
@@ -867,9 +863,7 @@ footer {
     ;
 }
 
-.footer-all .footer-right {
-    width: 20%;
-}
+
 
 
 
@@ -877,10 +871,9 @@ footer {
     margin-top: 25px;
 }
 
-.footer-all .footer-icons a img {
+.footer-icons a {
     display: inline-block;
-    width: 35px;
-    height: 35px;
+    width: 50px;
     cursor: pointer;
     border-radius: 2px;
     text-align: center;
@@ -889,7 +882,11 @@ footer {
 }
 
 
+.footer-icons-bottom1 .footer-icons-buttom2 img a {
+    width: 200px;
 
+
+}
 
 
 /***** MEDIA QUERY DESKTOP START *****/
@@ -1049,6 +1046,10 @@ footer {
         margin-left: 0;
     }
 
+    .footer-icons2 {
+        width: 200px;
+        text-align: center;
+    }
 
 
 }
