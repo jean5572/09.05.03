@@ -338,9 +338,7 @@ header {
 
 /**udtagelser**/
 .person-1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     padding-bottom: 50px;
 
 
@@ -354,16 +352,16 @@ header {
 }
 
 .person-1 p {
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 .person-2 {
-    display: flex;
+    text-align: center;
     padding-bottom: 50px;
 }
 
 .person-2 img {
-    width: 50%;
+    width: 20%;
     height: auto;
     border-radius: 50%
 }
@@ -373,12 +371,12 @@ header {
 }
 
 .person-3 {
-    display: flex;
+    text-align: center;
     padding-bottom: 50px;
 }
 
 .person-3 img {
-    width: 50%;
+    width: 20%;
     height: auto;
     border-radius: 50%
 }
@@ -1026,6 +1024,55 @@ footer {
     .frontpage-values p {
         text-align: center;
 
+    }
+
+    /**udtagelser**/
+    .person-1 {
+        text-align: center;
+        padding-bottom: 50px;
+
+
+    }
+
+    .person-1 img {
+        width: 60%;
+        height: auto;
+        border-radius: 50%;
+        flex-basis: 40%;
+    }
+
+    .person-1 p {
+        font-size: 2rem;
+    }
+
+    .person-2 {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .person-2 img {
+        width: 60%;
+        height: auto;
+        border-radius: 50%
+    }
+
+    .person-2 p {
+        font-size: 2rem;
+    }
+
+    .person-3 {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .person-3 img {
+        width: 60%;
+        height: auto;
+        border-radius: 50%
+    }
+
+    .person-3 p {
+        font-size: 2rem;
     }
 
 }
