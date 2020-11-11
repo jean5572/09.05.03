@@ -347,6 +347,7 @@
 
     <main>
         <!-- INTRO -->
+        <h1 class="title-page"></h1>
         <section id="hoejskoleophold" class="section-content">
         </section>
 
@@ -417,6 +418,7 @@
         function vis(hoejskole) {
             console.log(hoejskole)
             document.querySelector("#hoejskoleophold").innerHTML = hoejskole.content.rendered;
+            document.querySelector(".title-page").innerHTML = hoejskole.title.rendered;
             hentFagPods(fagpodGlob);
         }
 

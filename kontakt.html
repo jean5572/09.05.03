@@ -343,14 +343,8 @@
     <main>
 
         <!-- INTRO -->
+        <h1 class="title-page"></h1>
         <section id="kontakt" class="section-content">
-            <!--
-            <h1>Kontakt Idrætshøjskolen Sønderborg</h1>
-
-            <p>Her kan du blive klogere på IHS</p>
-            <p>Bliv Mærket for livet på IHS!</p>
-            <img>
--->
         </section>
 
         <!-- <div class="div2">
@@ -451,8 +445,11 @@
         function vis(hoejskole) {
             console.log(kontakt)
             document.querySelector("#kontakt").innerHTML = kontakt.content.rendered;
-            //                document.querySelector(".beskrivelse").innerHTML = forside.content.rendered;
+            document.querySelector(".title-page").innerHTML = kontakt.title.rendered;
 
         }
+
     </script>
-</body></html>
+</body>
+
+</html>

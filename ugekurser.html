@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <header>
+    <header>
         <div class="container">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
@@ -347,6 +347,7 @@
 
     <main>
         <!-- INTRO -->
+        <h1 class="title-page"></h1>
         <section id="ugekurser" class="section-content">
         </section>
 
@@ -434,6 +435,7 @@
         function vis(ugekurser) {
             console.log(ugekurser)
             document.querySelector("#ugekurser").innerHTML = ugekurser.content.rendered;
+            document.querySelector(".title-page").innerHTML = ugekurser.title.rendered;
             hentUgeKurserPods(ugeKurserPodsGlob);
         }
 
