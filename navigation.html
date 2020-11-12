@@ -1,12 +1,392 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om IHS - IHS.dk</title>
-    <link rel="stylesheet" href="style.css">
+    <title></title>
+    <link rel="stylesheet" href="">
 </head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        background-color: #A6C078;
+        width: 100vw;
+        z-index: 1000;
+        /*    height: 3rem;*/
+    }
+
+    .container {
+        max-width: 65rem;
+        padding: 0 2rem;
+        height: 3rem;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+    }
+
+    .logo-container {
+        flex: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-container img {
+        height: 3rem;
+    }
+
+
+
+
+    .nav-link>a {
+        /*    line-height: 3rem;*/
+        color: #fff;
+        padding: 0 .8rem;
+        letter-spacing: 1px;
+        font-size: .95rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+    }
+
+    .nav-link>a>i {
+        margin-left: .2rem;
+    }
+
+    .nav-link:hover>a {
+        text-decoration: underline;
+    }
+
+
+
+    .dropdown.third {
+        width: 15rem;
+    }
+
+    .dropdown ul {
+        position: relative;
+    }
+
+    .dropdown-link>a {
+        display: flex;
+        background-color: #A6C078;
+        color: white;
+        padding: .5rem 1rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dropdown-link i {
+        transform: rotate(-90deg);
+    }
+
+    .dropdown-link:not(:nth-last-child(1)) {
+        border-bottom: 1px solid #efefef;
+    }
+
+    .dropdown-link:hover>a {
+        background-color: white;
+        color: #A6C078;
+    }
+
+    .dropdown-link {
+        position: relative;
+    }
+
+    .dropdown.second {
+        top: 0;
+        left: 100%;
+        cursor: pointer;
+    }
+
+
+
+    .hamburger-menu-container {
+        flex: 1;
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .hamburger-menu {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hamburger-menu div {
+        width: 1.6rem;
+        height: 3px;
+        border-radius: 3px;
+        background-color: white;
+        position: relative;
+        z-index: 1001;
+        transition: .5s;
+    }
+
+    .hamburger-menu div:before,
+    .hamburger-menu div:after {
+        content: '';
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-color: white;
+        border-radius: 3px;
+    }
+
+    .hamburger-menu div:before {
+        transform: translateY(-7px)
+    }
+
+    .hamburger-menu div:after {
+        transform: translateY(7px)
+    }
+
+    #check {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        width: 2.5rem;
+        height: 2.5rem;
+        z-index: 9000;
+        cursor: pointer;
+        opacity: 0;
+        display: none;
+    }
+
+    #check:checked~.hamburger-menu-container .hamburger-menu div {
+        background-color: transparent;
+    }
+
+    #check:checked~.hamburger-menu-container .hamburger-menu div:before {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+    #check:checked~.hamburger-menu-container .hamburger-menu div:after {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    /*   Det VAR I MOBILE */
+    .hamburger-menu-container {
+        display: flex;
+    }
+
+    #check {
+        display: block;
+    }
+
+    .nav-btn {
+        position: fixed;
+        height: calc(100vh - 3rem);
+        top: 3rem;
+        left: 0;
+        width: 100%;
+        background-color: #A8BF78;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: .65s;
+    }
+
+    #check:checked~.nav-btn {
+        transform: translateX(0);
+    }
+
+    .nav-links {
+        flex: initial;
+        width: 100%;
+    }
+
+    .nav-links>ul {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        width: 100%;
+    }
+
+    .nav-link>a {
+        line-height: 1;
+        padding: 1.6rem 2rem;
+    }
+
+    .nav-link:hover>a {
+        text-decoration: underline;
+    }
+
+    .dropdown,
+    .dropdown.second {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        padding: 0;
+        background-color: #7a8b55;
+        display: none;
+    }
+
+    .dropdown.second {
+        position: initial;
+        top: initial;
+        left: initial;
+        transform: initial;
+        opacity: 1;
+        pointer-events: auto;
+        width: 100%;
+        padding: 0;
+        background-color: #525d3a;
+        display: none;
+    }
+
+    .nav-link:hover>.dropdown,
+    .dropdown-link:hover>.dropdown {
+        display: block;
+    }
+
+    .nav-link:hover>a>i,
+    .dropdown-link:hover>a>i {
+        transform: rotate(360deg);
+    }
+
+
+    .dropdown-link>a {
+        background-color: transparent;
+        color: white;
+        padding: 1.2rem 2rem;
+    }
+
+    .dropdown.second .dropdown-link>a {
+        padding: 1.2rem 2rem 1.2rem 3rem;
+    }
+
+    .dropdown.second .dropdown.second .dropdown-link>a {
+        padding: 1.2rem 2rem 1.2rem 4rem;
+    }
+
+    .dropdown-link:not(:nth-last-child(1)) {
+        border-bottom: none;
+    }
+
+    dropdown-link:hover>a {
+        background-color: white;
+        color: #A6C078;
+    }
+
+
+    .language {
+        flex: initial;
+        width: 100%;
+        padding: 1.5rem 1.9rem;
+    }
+
+
+
+    @media (min-width: 920px) {
+
+        .nav-link:hover>.dropdown,
+        .dropdown-link:hover>.dropdown {
+            transform: translate(0, 0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 10rem;
+            transform: translateY(10px);
+            opacity: 0;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+
+        .btn {
+            display: inline-block;
+            padding: .5rem 1.3rem;
+        }
+
+
+        .nav-link {
+            position: relative;
+        }
+
+
+        .nav-links>ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .nav-links>ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .nav-btn {
+            flex: 3;
+            display: flex;
+        }
+
+        .nav-links {
+            flex: 2;
+        }
+
+        .language {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        .hamburger-menu-container {
+            flex: 1;
+            display: none;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #check {
+            display: none;
+        }
+    }
+
+</style>
 
 <body>
     <header>
@@ -41,40 +421,40 @@
                                                     <div class="dropdown second">
                                                         <ul>
                                                             <li class="dropdown-link">
-                                                                <a href="#771">ADVENTURE RACING</a>
+                                                                <a href="#">ADVENTURE RACING</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#772">BEACHVOLLEY</a>
+                                                                <a href="#">BEACHVOLLEY</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#782">VOLLEYBALL</a>
+                                                                <a href="#">VOLLEYBALL</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#773">SEJLADS</a>
+                                                                <a href="#">SEJLADS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#774">KITESURF OG WATERSPORTS</a>
+                                                                <a href="#">KITESURF OG WATERSPORTS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#775">TRIATLON</a>
+                                                                <a href="#">TRIATLON</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#776">ADRENALIN</a>
+                                                                <a href="#">ADRENALIN</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#777">TONS</a>
+                                                                <a href="#">TONS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#778">FITNESS INSTRUKTØR</a>
+                                                                <a href="#">FITNESS INSTRUKTØR</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#779">YOGA</a>
+                                                                <a href="#">YOGA</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#780">ALT I VAND</a>
+                                                                <a href="#">ALT I VAND</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#781">IHS 360</a>
+                                                                <a href="#">IHS 360</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -84,40 +464,40 @@
                                                     <div class="dropdown second">
                                                         <ul>
                                                             <li class="dropdown-link">
-                                                                <a href="#783">SVØMNING</a>
+                                                                <a href="#">SVØMNING</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#784">SKATERHOCKEY</a>
+                                                                <a href="#">SKATERHOCKEY</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#785">BEACHSPIL</a>
+                                                                <a href="#">BEACHSPIL</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#786">HÅNDBOLD</a>
+                                                                <a href="#">HÅNDBOLD</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#787">WINDSURF</a>
+                                                                <a href="#">WINDSURF</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#788">TENNIS</a>
+                                                                <a href="#">TENNIS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#789">KLATRING OG MTB</a>
+                                                                <a href="#">KLATRING OG MTB</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#790">X-FIT</a>
+                                                                <a href="#">X-FIT</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#791">FODBOLD</a>
+                                                                <a href="#">FODBOLD</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#792">HEAT</a>
+                                                                <a href="#">HEAT</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#793">FITNESS PERFORMANCE</a>
+                                                                <a href="#">FITNESS PERFORMANCE</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#794">SQAUSH/TENNIS</a>
+                                                                <a href="#">SQAUSH/TENNIS</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -127,37 +507,37 @@
                                                     <div class="dropdown second">
                                                         <ul>
                                                             <li class="dropdown-link">
-                                                                <a href="#795">KROP OG SUNDHED</a>
+                                                                <a href="#">KROP OG SUNDHED</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#796">UDSIGTEN</a>
+                                                                <a href="#">UDSIGTEN</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#797">DEBATTEN</a>
+                                                                <a href="#">DEBATTEN</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#798">NÅR JEG BLIVER STOR</a>
+                                                                <a href="#">NÅR JEG BLIVER STOR</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#799">AROUND POLITICS</a>
+                                                                <a href="#">AROUND POLITICS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#800">SOCIAL DYNAMICS</a>
+                                                                <a href="#">SOCIAL DYNAMICS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#801">MØD DK</a>
+                                                                <a href="#">MØD DK</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#802">LIVSVÆRDIER</a>
+                                                                <a href="#">LIVSVÆRDIER</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#803">MENTAL STYRKE</a>
+                                                                <a href="#">MENTAL STYRKE</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#804">INTERNATIONAL CLASS</a>
+                                                                <a href="#">INTERNATIONAL CLASS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#805">LEDELSESAKADEMI ØVET</a>
+                                                                <a href="#">LEDELSESAKADEMI ØVET</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -167,31 +547,31 @@
                                                     <div class="dropdown second">
                                                         <ul>
                                                             <li class="dropdown-link">
-                                                                <a href="#806">SPORTSMASSØR</a>
+                                                                <a href="#">SPORTSMASSØR</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#807">DET KREATIVE VÆRKSTED</a>
+                                                                <a href="#">DET KREATIVE VÆRKSTED</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#808">FØRSTEHJÆLP</a>
+                                                                <a href="#">FØRSTEHJÆLP</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#809">PAUSEN</a>
+                                                                <a href="#">PAUSEN</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#810">BRÆTSPIL</a>
+                                                                <a href="#">BRÆTSPIL</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#811">VILDMARKSLIV</a>
+                                                                <a href="#">VILDMARKSLIV</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#812">VILD MED DANS</a>
+                                                                <a href="#">VILD MED DANS</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#813">FRILUFTSLIV</a>
+                                                                <a href="#">FRILUFTSLIV</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#814">E-SPORT</a>
+                                                                <a href="#">E-SPORT</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -201,31 +581,31 @@
                                                     <div class="dropdown second third">
                                                         <ul>
                                                             <li class="dropdown-link">
-                                                                <a href="#815">SKOLEMØDE</a>
+                                                                <a href="#">SKOLEMØDE</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#816">MORGENSANG</a>
+                                                                <a href="#">MORGENSANG</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#817">MORGENSAMLING</a>
+                                                                <a href="#">MORGENSAMLING</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#818">FÆLLESDANS/ FÆLLESIDRÆT</a>
+                                                                <a href="#">FÆLLESDANS/ FÆLLESIDRÆT</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#819">LEDELSESAKADEMI (BEGYNDER)</a>
+                                                                <a href="#">LEDELSESAKADEMI</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#820">SANG/ELEVFOREDRAG</a>
+                                                                <a href="#">SANG/ELEVFOREDRAG</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#821">KONTAKTGRUPPEMØDE</a>
+                                                                <a href="#">KONTAKTGRUPPEMØDE</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#822">FOREDRAG</a>
+                                                                <a href="#">FOREDRAG</a>
                                                             </li>
                                                             <li class="dropdown-link">
-                                                                <a href="#823">FÆLLESAFTENS</a>
+                                                                <a href="#">FÆLLESAFTENS</a>
                                                             </li>
                                                             <li class="dropdown-link">
                                                                 <a href="#">HEAT</a>
@@ -340,139 +720,8 @@
 
     </header>
 
-    <template class="temp">
-        <img class="profil_billede" src="" alt="">
-        <h3 class="navn"></h3>
-        <p class="stilling"></p>
-        <p class="beskrivelse"></p>
-    </template>
 
-    <template class="temp2">
-        <p class="question"></p>
-        <p class="answer"></p>
-    </template>
-    <main>
-        <!-- INTRO -->
-        <h1 class="title-page"></h1>
-        <section id="om" class="section-content">
-        </section>
-    </main>
-
-    <footer class="footer-all">
-
-        <div class="footer-left">
-            <h3>Kontakt</h3>
-            <p>Friheds allé 42</p>
-            <p>6400 Sønderborg</p>
-
-            <p><a href="mailto:info@ihs.dk">info@ihs.dk</a></p>
-
-            <p>+45 74 42 18 48</p>
-
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.927377205106!2d9.799940652550225!3d54.898685996748675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b339ed66de4daf%3A0x5e09d8a1b16c81c5!2zSWRyw6Z0c2jDuGpza29sZW4gU8O4bmRlcmJvcmc!5e0!3m2!1sda!2sdk!4v1604505215105!5m2!1sda!2sdk" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        </div>
-
-        <div class="footer-center">
-            <div>
-                <h3>
-                    <strong>
-                        <p>Fælleskab</p>
-                        <p>Kompetencer</p>
-                        <p>Oplevelser</p>
-                    </strong>
-                    <p>Grundværdier Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur vero, assumenda, exercitationem fuga sit nulla beatae obcaecati, ipsum tempora autem alias laborum ipsa animi impedit esse provident mollitia, quaerat repellendus?</p>
-                </h3>
-            </div>
-        </div>
-
-        <div class="footer-right">
-            <h3>Følg med</h3>
-            <div class="footer-icons">
-                <a href="#">Facebook<img src="img/icons/"></a>
-                <a href="#">Instagram<img src="img/icons/"></a>
-                <a href="#">Vimeo<img src="img/icons/"></a>
-                <a href="#">YouTube<img src="img/icons/"></a>
-                <a href="#">Trustpilot<img src="img/icons/"></a>
-                <a href="#">En del af Højskolerne<img src="img/icons/"></a>
-            </div>
-        </div>
-
-    </footer>
-
-
-
-
-
-
-    <script src="script.js"></script>
-    <script>
-        "use strict"
-        const omIhs = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/pages/58";
-        const personalePods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/personale?per_page=100";
-        const faqPods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/faq?per_page=100";
-
-        let om;
-        let personalePodsGlob;
-        let faqPodsGlob;
-        document.addEventListener("DOMContentLoaded", hentData);
-
-
-        async function hentData() {
-            const respons = await fetch(omIhs);
-            const respons1 = await fetch(personalePods);
-            const respons2 = await fetch(faqPods);
-            om = await respons.json();
-            personalePodsGlob = await respons1.json();
-            faqPodsGlob = await respons2.json();
-            vis(om);
-            console.log('DataHentet')
-        }
-
-        function vis(om) {
-            console.log(om)
-            document.querySelector("#om").innerHTML = om.content.rendered;
-            document.querySelector(".title-page").innerHTML = om.title.rendered;
-            hentPersonalePods(personalePodsGlob);
-            hentFaqPods(faqPodsGlob);
-        }
-
-        function hentPersonalePods(personPod) {
-            let temp = document.querySelector(".temp");
-            let container = document.querySelector(".personale-pods");
-
-            personPod.forEach(person => {
-
-                const klon = temp.cloneNode(true).content;
-                klon.querySelector(".profil_billede").src = person.profil_billede.guid;
-                klon.querySelector(".navn").textContent = person.title.rendered;
-                klon.querySelector(".stilling").textContent = person.stilling;
-                klon.querySelector(".beskrivelse").innerHTML = person._beskrivelse;
-
-                container.appendChild(klon);
-
-
-
-            })
-        }
-
-        function hentFaqPods(faqPod) {
-            let temp = document.querySelector(".temp2");
-            let container2 = document.querySelector(".faq-pods");
-
-            faqPod.forEach(faq => {
-
-                const klon = temp.cloneNode(true).content;
-                klon.querySelector(".question").textContent = faq.question;
-                klon.querySelector(".answer").textContent = faq.answer;
-
-                container2.appendChild(klon);
-
-
-
-            })
-        }
-
-    </script>
+    <script src=""></script>
 </body>
 
 </html>
