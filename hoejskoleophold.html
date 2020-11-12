@@ -402,6 +402,9 @@
         const fagpods = "http://creativeworld.dk/kea02/tema09/09.05.03/wordpress/wp-json/wp/v2/fag?per_page=100";
         let hoejskole;
         let fagpodGlob;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
         document.addEventListener("DOMContentLoaded", hentData);
 
 
@@ -412,19 +415,20 @@
             fagpodGlob = await respons1.json();
             vis(hoejskole);
             console.log('DataHentet')
+            console.log(id)
         }
 
         function vis(hoejskole) {
             console.log(hoejskole)
             document.querySelector("#hoejskoleophold").innerHTML = hoejskole.content.rendered;
             document.querySelector(".title-page").innerHTML = hoejskole.title.rendered;
-            hentFagPods(fagpodGlob);
+            hentFagPods();
         }
 
-        function hentFagPods(fagpod) {
+        function hentFagPods() {
             let temp = document.querySelector(".temp");
             let container = document.querySelector(".fag-pods");
-            fagpod.forEach(fag => {
+            fagpodGlob.forEach(fag => {
 
                 const klon = temp.cloneNode(true).content;
                 klon.querySelector("h3").textContent = fag.title.rendered;
@@ -436,6 +440,13 @@
 
 
             })
+            scrollToLocation(id);
+        }
+
+        function scrollToLocation(id) {
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
         }
 
     </script>

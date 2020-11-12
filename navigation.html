@@ -55,67 +55,6 @@
 
 
 
-    .nav-link>a {
-        /*    line-height: 3rem;*/
-        color: #fff;
-        padding: 0 .8rem;
-        letter-spacing: 1px;
-        font-size: .95rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: .5s;
-    }
-
-    .nav-link>a>i {
-        margin-left: .2rem;
-    }
-
-    .nav-link:hover>a {
-        text-decoration: underline;
-    }
-
-
-
-    .dropdown.third {
-        width: 15rem;
-    }
-
-    .dropdown ul {
-        position: relative;
-    }
-
-    .dropdown-link>a {
-        display: flex;
-        background-color: #A6C078;
-        color: white;
-        padding: .5rem 1rem;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .dropdown-link i {
-        transform: rotate(-90deg);
-    }
-
-    .dropdown-link:not(:nth-last-child(1)) {
-        border-bottom: 1px solid #efefef;
-    }
-
-    .dropdown-link:hover>a {
-        background-color: white;
-        color: #A6C078;
-    }
-
-    .dropdown-link {
-        position: relative;
-    }
-
-    .dropdown.second {
-        top: 0;
-        left: 100%;
-        cursor: pointer;
-    }
 
 
 
@@ -309,6 +248,68 @@
 
 
     @media (min-width: 920px) {
+
+        .nav-link>a {
+            /*    line-height: 3rem;*/
+            color: #fff;
+            padding: 0 .8rem;
+            letter-spacing: 1px;
+            font-size: .95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: .5s;
+        }
+
+        .nav-link>a>i {
+            margin-left: .2rem;
+        }
+
+        .nav-link:hover>a {
+            text-decoration: underline;
+        }
+
+
+
+        .dropdown.third {
+            width: 15rem;
+        }
+
+        .dropdown ul {
+            position: relative;
+        }
+
+        .dropdown-link>a {
+            display: flex;
+            background-color: #A6C078;
+            color: white;
+            padding: .5rem 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dropdown-link i {
+            transform: rotate(-90deg);
+        }
+
+        .dropdown-link:not(:nth-last-child(1)) {
+            border-bottom: 1px solid #efefef;
+        }
+
+        .dropdown-link:hover>a {
+            background-color: white;
+            color: #A6C078;
+        }
+
+        .dropdown-link {
+            position: relative;
+        }
+
+        .dropdown.second {
+            top: 0;
+            left: 100%;
+            cursor: pointer;
+        }
 
         .nav-link:hover>.dropdown,
         .dropdown-link:hover>.dropdown {
