@@ -248,6 +248,21 @@
 
 
     @media (min-width: 920px) {
+        .nav-btn {
+            position: fixed;
+            height: calc(100vh - 3rem);
+            top: 3rem;
+            left: 0;
+            width: 100%;
+            background-color: #A8BF78;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            overflow-x: hidden;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: .65s;
+        }
 
         .nav-link>a {
             /*    line-height: 3rem;*/
