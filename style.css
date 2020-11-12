@@ -114,7 +114,6 @@ main {
 /***** JEAN NAVBAR START *****/
 /***** INDEX / NAVBAR *****/
 .index {
-    /*    overflow: hidden;*/
     font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -135,30 +134,7 @@ header {
     background-color: #A6C078;
     width: 100vw;
     z-index: 1000;
-    /*    height: 3rem;*/
 }
-
-
-/*.splash {
-    position: absolute;*/
-/*
-    height: calc(100vh - 3rem);*/
-/*    width: 100%;*/
-/* background: url(img/landingpage/splash1.jpg) no-repeat top center / cover;*/
-/*    overflow: hidden;
-    width: 100%;
-    top: 0;
-    left: 0;
-}*/
-
-/*.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}*/
 
 .container {
     max-width: 65rem;
